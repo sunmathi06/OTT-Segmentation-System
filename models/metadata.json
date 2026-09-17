@@ -1,0 +1,116 @@
+{
+  "algorithm": "KMeans",
+  "n_clusters": 5,
+  "features": {
+    "raw_numerical": [
+      "watch_time",
+      "session_duration",
+      "visit_frequency",
+      "completion_rate",
+      "number_of_sessions",
+      "action_preference",
+      "family_preference",
+      "comedy_preference",
+      "drama_preference",
+      "weekend_watch_ratio",
+      "skip_intro_rate"
+    ],
+    "raw_categorical": [
+      "primary_device",
+      "subscription_tier"
+    ],
+    "engineered": [
+      "feat_avg_session_duration",
+      "feat_completion_ratio",
+      "feat_engagement_score",
+      "feat_visit_intensity",
+      "feat_genre_diversity"
+    ]
+  },
+  "training_timestamp": "2026-09-17T12:56:03.606599Z",
+  "dataset_rows": 5000,
+  "dataset_columns": [
+    "user_id",
+    "watch_time",
+    "session_duration",
+    "visit_frequency",
+    "completion_rate",
+    "number_of_sessions",
+    "action_preference",
+    "family_preference",
+    "comedy_preference",
+    "drama_preference",
+    "primary_device",
+    "subscription_tier",
+    "weekend_watch_ratio",
+    "skip_intro_rate"
+  ],
+  "model_version": "1.0.0",
+  "metrics": {
+    "silhouette_score": 0.3996,
+    "davies_bouldin_score": 1.0066,
+    "calinski_harabasz_score": 3262.98,
+    "inertia": 24167.41,
+    "stability_mean_ari": 1.0,
+    "stability_grade": "High"
+  },
+  "k_selection": {
+    "candidate_evaluations": [
+      {
+        "k": 2,
+        "inertia": 52588.94,
+        "silhouette_score": 0.3521,
+        "davies_bouldin_score": 1.2097,
+        "calinski_harabasz_score": 3300.51
+      },
+      {
+        "k": 3,
+        "inertia": 38902.04,
+        "silhouette_score": 0.3759,
+        "davies_bouldin_score": 0.986,
+        "calinski_harabasz_score": 3109.46
+      },
+      {
+        "k": 4,
+        "inertia": 30040.56,
+        "silhouette_score": 0.3701,
+        "davies_bouldin_score": 1.1734,
+        "calinski_harabasz_score": 3175.18
+      },
+      {
+        "k": 5,
+        "inertia": 24167.41,
+        "silhouette_score": 0.3996,
+        "davies_bouldin_score": 1.0066,
+        "calinski_harabasz_score": 3262.98
+      },
+      {
+        "k": 6,
+        "inertia": 23101.21,
+        "silhouette_score": 0.3454,
+        "davies_bouldin_score": 1.35,
+        "calinski_harabasz_score": 2776.42
+      },
+      {
+        "k": 7,
+        "inertia": 22224.59,
+        "silhouette_score": 0.2666,
+        "davies_bouldin_score": 1.7323,
+        "calinski_harabasz_score": 2437.29
+      },
+      {
+        "k": 8,
+        "inertia": 21590.88,
+        "silhouette_score": 0.2056,
+        "davies_bouldin_score": 2.0296,
+        "calinski_harabasz_score": 2170.92
+      }
+    ],
+    "selected_k": 5,
+    "selection_method": "silhouette"
+  },
+  "pca_variance_explained": [
+    0.4901,
+    0.1569
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "OTT Audience Intelligence",
+  "description": "Production-style unsupervised machine learning service and behavioral segmentation dashboard for OTT streaming audience personalization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

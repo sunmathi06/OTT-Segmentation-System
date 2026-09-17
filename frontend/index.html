@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTT Audience Intelligence Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <header class="navbar">
+      <div class="brand">
+        <span class="logo-icon">▲</span>
+        <h2>OTT Audience Intelligence</h2>
+      </div>
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span id="api-status-text">Connecting to API...</span>
+      </div>
+    </header>
+
+    <main class="dashboard-content">
+      <!-- Metrics Row -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <span class="label">Total Viewers</span>
+          <span class="val" id="val-total-users">-</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Audience Segments</span>
+          <span class="val" id="val-n-clusters">-</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Silhouette Score</span>
+          <span class="val" id="val-silhouette">-</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Algorithm</span>
+          <span class="val" id="val-algo">K-Means</span>
+        </div>
+      </section>
+
+      <!-- Segments Section -->
+      <section class="section-block">
+        <h3>Discovered Audience Segments</h3>
+        <div id="segments-container" class="segments-grid">Loading segments...</div>
+      </section>
+
+      <!-- Prediction Form Demo -->
+      <section class="section-block">
+        <h3>Live Viewer Inference Demo</h3>
+        <form id="predict-form" class="predict-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Watch Time (minutes)</label>
+              <input type="number" id="inp-watch" value="2450" required min="0">
+            </div>
+            <div class="form-group">
+              <label>Session Duration (mins)</label>
+              <input type="number" id="inp-session" value="55" required min="1">
+            </div>
+            <div class="form-group">
+              <label>Visit Frequency (visits/mo)</label>
+              <input type="number" id="inp-visits" value="22" required min="0">
+            </div>
+            <div class="form-group">
+              <label>Completion Rate (0.0 - 1.0)</label>
+              <input type="number" step="0.01" id="inp-completion" value="0.92" required min="0" max="1">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Action Genre Ratio</label>
+              <input type="number" step="0.05" id="inp-action" value="0.80" min="0" max="1">
+            </div>
+            <div class="form-group">
+              <label>Family Genre Ratio</label>
+              <input type="number" step="0.05" id="inp-family" value="0.05" min="0" max="1">
+            </div>
+            <div class="form-group">
+              <label>Comedy Genre Ratio</label>
+              <input type="number" step="0.05" id="inp-comedy" value="0.08" min="0" max="1">
+            </div>
+            <div class="form-group">
+              <label>Drama Genre Ratio</label>
+              <input type="number" step="0.05" id="inp-drama" value="0.07" min="0" max="1">
+            </div>
+          </div>
+          <button type="submit" class="btn-primary" id="btn-predict">Predict Audience Segment</button>
+        </form>
+
+        <div id="prediction-result" class="prediction-result" style="display: none;">
+          <h4>Prediction Outcome:</h4>
+          <div class="result-details">
+            <p><strong>Predicted Segment:</strong> <span id="res-segment-name" class="highlight"></span></p>
+            <p><strong>Cluster ID:</strong> <span id="res-cluster-id"></span></p>
+            <p><strong>Centroid Proximity Indicator:</strong> <span id="res-similarity"></span></p>
+            <div id="res-traits" class="traits-container"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

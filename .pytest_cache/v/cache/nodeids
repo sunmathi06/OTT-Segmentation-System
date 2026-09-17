@@ -1,0 +1,16 @@
+[
+  "tests/test_api.py::test_health_endpoint",
+  "tests/test_api.py::test_info_endpoint",
+  "tests/test_api.py::test_predict_batch_endpoint",
+  "tests/test_api.py::test_predict_endpoint_valid",
+  "tests/test_api.py::test_predict_validation_error_negative",
+  "tests/test_api.py::test_predict_validation_error_out_of_range_completion",
+  "tests/test_api.py::test_segment_detail_endpoint",
+  "tests/test_api.py::test_segment_detail_not_found",
+  "tests/test_api.py::test_segments_list_endpoint",
+  "tests/test_model.py::test_dataset_validation",
+  "tests/test_model.py::test_feature_engineer",
+  "tests/test_model.py::test_model_artifact_loading",
+  "tests/test_model.py::test_pipeline_transformation",
+  "tests/test_model.py::test_segment_naming_logic"
+]
